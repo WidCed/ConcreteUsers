@@ -16,6 +16,7 @@ final class ConcreteUserBuilderTest extends \PHPUnit_Framework_TestCase {
     private $integerMock;
     private $stringMock;
     private $dateTimeMock;
+    private $roleMock;
     private $booleanAdapterMock;
     private $userMock;
     private $classNameElement;
@@ -36,6 +37,7 @@ final class ConcreteUserBuilderTest extends \PHPUnit_Framework_TestCase {
         $this->stringMock = $this->getMock('Strings\Domain\Strings\String');
         $this->dateTimeMock = $this->getMock('DateTimes\Domain\DateTimes\DateTime');
         $this->booleanAdapterMock = $this->getMock('Booleans\Domain\Booleans\Adapters\BooleanAdapter');
+        $this->roleMock = $this->getMock('Roles\Domain\Roles\Role');
         $this->userMock = $this->getMock('Users\Domain\Users\User');
         
         $this->classNameElement = 'ConcreteUsers\Infrastructure\Objects\ConcreteUser';
@@ -59,11 +61,27 @@ final class ConcreteUserBuilderTest extends \PHPUnit_Framework_TestCase {
     public function testBuild_Success() {
         
         $this->objectLoaderAdapterHelper->expects_convertClassNameElementToObjectLoader_Success($this->objectLoaderMock, $this->classNameElement);
-        $this->objectLoaderHelper->expects_instantiate_Success($this->userMock, array($this->uuidMock, $this->stringMock, $this->dateTimeMock, $this->booleanAdapterMock));
+        $this->objectLoaderHelper->expects_instantiate_Success($this->userMock, array($this->uuidMock, $this->stringMock, $this->dateTimeMock, $this->booleanAdapterMock, null, null));
         
         $user = $this->builder->create()
                                 ->withUuid($this->uuidMock)
                                 ->withUsername($this->stringMock)
+                                ->createdOn($this->dateTimeMock)
+                                ->now();
+        
+        $this->assertEquals($this->userMock, $user);
+        
+    }
+    
+    public function testBuild_withRole_Success() {
+        
+        $this->objectLoaderAdapterHelper->expects_convertClassNameElementToObjectLoader_Success($this->objectLoaderMock, $this->classNameElement);
+        $this->objectLoaderHelper->expects_instantiate_Success($this->userMock, array($this->uuidMock, $this->stringMock, $this->dateTimeMock, $this->booleanAdapterMock, null, $this->roleMock));
+        
+        $user = $this->builder->create()
+                                ->withUuid($this->uuidMock)
+                                ->withUsername($this->stringMock)
+                                ->withRole($this->roleMock)
                                 ->createdOn($this->dateTimeMock)
                                 ->now();
         
@@ -92,11 +110,28 @@ final class ConcreteUserBuilderTest extends \PHPUnit_Framework_TestCase {
     public function testBuild_withLastUpdatedOn_Success() {
         
         $this->objectLoaderAdapterHelper->expects_convertClassNameElementToObjectLoader_Success($this->objectLoaderMock, $this->classNameElement);
-        $this->objectLoaderHelper->expects_instantiate_Success($this->userMock, array($this->uuidMock, $this->stringMock, $this->dateTimeMock, $this->booleanAdapterMock, $this->dateTimeMock));
+        $this->objectLoaderHelper->expects_instantiate_Success($this->userMock, array($this->uuidMock, $this->stringMock, $this->dateTimeMock, $this->booleanAdapterMock, $this->dateTimeMock, null));
         
         $user = $this->builder->create()
                                 ->withUuid($this->uuidMock)
                                 ->withUsername($this->stringMock)
+                                ->createdOn($this->dateTimeMock)
+                                ->lastUpdatedOn($this->dateTimeMock)
+                                ->now();
+        
+        $this->assertEquals($this->userMock, $user);
+        
+    }
+    
+    public function testBuild_withLastUpdatedOn_withRole_Success() {
+        
+        $this->objectLoaderAdapterHelper->expects_convertClassNameElementToObjectLoader_Success($this->objectLoaderMock, $this->classNameElement);
+        $this->objectLoaderHelper->expects_instantiate_Success($this->userMock, array($this->uuidMock, $this->stringMock, $this->dateTimeMock, $this->booleanAdapterMock, $this->dateTimeMock, $this->roleMock));
+        
+        $user = $this->builder->create()
+                                ->withUuid($this->uuidMock)
+                                ->withUsername($this->stringMock)
+                                ->withRole($this->roleMock)
                                 ->createdOn($this->dateTimeMock)
                                 ->lastUpdatedOn($this->dateTimeMock)
                                 ->now();

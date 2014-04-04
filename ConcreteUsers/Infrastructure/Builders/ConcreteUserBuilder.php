@@ -6,16 +6,19 @@ use Booleans\Domain\Booleans\Adapters\BooleanAdapter;
 use ObjectLoaders\Domain\ObjectLoaders\Adapters\ObjectLoaderAdapter;
 use Strings\Domain\Strings\String;
 use Entities\Domain\Entities\Builders\Exceptions\CannotBuildEntityException;
+use Roles\Domain\Roles\Role;
 
 final class ConcreteUserBuilder extends AbstractEntityBuilder implements UserBuilder {
     
     private $username;
+    private $role;
     public function __construct(BooleanAdapter $booleanAdapter, ObjectLoaderAdapter $objectLoaderAdapter) {
         parent::__construct($booleanAdapter, $objectLoaderAdapter, 'ConcreteUsers\Infrastructure\Objects\ConcreteUser');
     }
     
     public function create() {
         $this->username = null;
+        $this->role = null;
         return parent::create();
     }
     
@@ -24,15 +27,24 @@ final class ConcreteUserBuilder extends AbstractEntityBuilder implements UserBui
         return $this;
     }
     
+    public function withRole(Role $role) {
+        $this->role = $role;
+        return $this;
+    }
+    
     protected function getParamsData() {
         
-        $paramsData = array($this->uuid, $this->username, $this->createdOn, $this->booleanAdapter);
-        
+        $lastUpdatedOn = null;
         if (!empty($this->lastUpdatedOn)) {
-            $paramsData[] = $this->lastUpdatedOn;
+            $lastUpdatedOn = $this->lastUpdatedOn;
         }
         
-        return $paramsData;
+        $role = null;
+        if (!empty($this->role)) {
+            $role = $this->role;
+        }
+        
+        return array($this->uuid, $this->username, $this->createdOn, $this->booleanAdapter, $lastUpdatedOn, $role);
         
     }
     

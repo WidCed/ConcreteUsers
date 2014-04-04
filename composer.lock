@@ -1486,12 +1486,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/irestful/ConcreteEntities.git",
-                "reference": "98773918363f91e4efa7534f210fbcea9a447760"
+                "reference": "e60f0a97c3f1101942aa4e91a66b0bbeeb36d186"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/irestful/ConcreteEntities/zipball/98773918363f91e4efa7534f210fbcea9a447760",
-                "reference": "98773918363f91e4efa7534f210fbcea9a447760",
+                "url": "https://api.github.com/repos/irestful/ConcreteEntities/zipball/e60f0a97c3f1101942aa4e91a66b0bbeeb36d186",
+                "reference": "e60f0a97c3f1101942aa4e91a66b0bbeeb36d186",
                 "shasum": ""
             },
             "require": {
@@ -1545,7 +1545,7 @@
                 }
             ],
             "homepage": "https://github.com/irestful/ConcreteEntities",
-            "time": "2014-04-03 12:46:40"
+            "time": "2014-04-04 09:07:40"
         },
         {
             "name": "irestful/concretefunctionaltesthelpers",
@@ -2907,6 +2907,48 @@
             "time": "2014-04-03 09:29:57"
         },
         {
+            "name": "irestful/entitysetss",
+            "version": "13.11.28",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/irestful/EntitySets.git",
+                "reference": "4d2fe136eaaa18572bf67b4859f5bb5721c26195"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/irestful/EntitySets/zipball/4d2fe136eaaa18572bf67b4859f5bb5721c26195",
+                "reference": "4d2fe136eaaa18572bf67b4859f5bb5721c26195",
+                "shasum": ""
+            },
+            "require": {
+                "irestful/hashmapsets": "13.11.28",
+                "irestful/sets": "13.11.28",
+                "irestful/unittesthelpers": "13.11.28",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "EntitySets": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steve Rodrigue",
+                    "email": "steve@irestful.com"
+                }
+            ],
+            "homepage": "https://github.com/irestful/EntitySets",
+            "time": "2014-03-26 18:46:11"
+        },
+        {
             "name": "irestful/hashmaprepresentations",
             "version": "13.11.28",
             "source": {
@@ -2990,6 +3032,47 @@
             ],
             "homepage": "https://github.com/irestful/HashMaps",
             "time": "2014-03-22 15:43:07"
+        },
+        {
+            "name": "irestful/hashmapsets",
+            "version": "13.11.28",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/irestful/HashMapSets.git",
+                "reference": "e9552ae4bcf7d786b322783970f347d75d2c3af2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/irestful/HashMapSets/zipball/e9552ae4bcf7d786b322783970f347d75d2c3af2",
+                "reference": "e9552ae4bcf7d786b322783970f347d75d2c3af2",
+                "shasum": ""
+            },
+            "require": {
+                "irestful/sets": "13.11.28",
+                "irestful/unittesthelpers": "13.11.28",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "HashMapSets": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steve Rodrigue",
+                    "email": "steve@irestful.com"
+                }
+            ],
+            "homepage": "https://github.com/irestful/HashMapSets",
+            "time": "2014-03-22 21:46:04"
         },
         {
             "name": "irestful/integers",
@@ -3487,6 +3570,50 @@
             "time": "2014-03-20 09:27:03"
         },
         {
+            "name": "irestful/roles",
+            "version": "13.11.28",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/irestful/Roles.git",
+                "reference": "39fef944141e8aa91fb93072c2877f4fb8fda669"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/irestful/Roles/zipball/39fef944141e8aa91fb93072c2877f4fb8fda669",
+                "reference": "39fef944141e8aa91fb93072c2877f4fb8fda669",
+                "shasum": ""
+            },
+            "require": {
+                "irestful/booleans": "13.11.28",
+                "irestful/entities": "13.11.28",
+                "irestful/entitysetss": "13.11.28",
+                "irestful/strings": "13.11.28",
+                "irestful/unittesthelpers": "13.11.28",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Roles": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steve Rodrigue",
+                    "email": "steve@irestful.com"
+                }
+            ],
+            "homepage": "https://github.com/irestful/Roles",
+            "time": "2014-04-03 11:03:40"
+        },
+        {
             "name": "irestful/sets",
             "version": "13.11.28",
             "source": {
@@ -3826,17 +3953,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/irestful/Users.git",
-                "reference": "1b874a01ce71253ad3f23c8606837dae07f64115"
+                "reference": "6cdb0d2ff13d3bb2a2226a8f9d9dc016324516cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/irestful/Users/zipball/1b874a01ce71253ad3f23c8606837dae07f64115",
-                "reference": "1b874a01ce71253ad3f23c8606837dae07f64115",
+                "url": "https://api.github.com/repos/irestful/Users/zipball/6cdb0d2ff13d3bb2a2226a8f9d9dc016324516cc",
+                "reference": "6cdb0d2ff13d3bb2a2226a8f9d9dc016324516cc",
                 "shasum": ""
             },
             "require": {
                 "irestful/datetimes": "13.11.28",
                 "irestful/entities": "13.11.28",
+                "irestful/roles": "13.11.28",
                 "irestful/strings": "13.11.28",
                 "irestful/uuids": "13.11.28",
                 "php": ">=5.4.0"
@@ -3862,7 +3990,7 @@
                 }
             ],
             "homepage": "https://github.com/irestful/Users",
-            "time": "2014-04-03 14:21:00"
+            "time": "2014-04-04 09:34:09"
         },
         {
             "name": "irestful/uuids",
