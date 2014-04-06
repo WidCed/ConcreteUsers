@@ -1,69 +1,40 @@
 <?php
 namespace ConcreteUsers\Tests\Tests\Functional;
 use ConcreteFunctionalTestHelpers\Tests\Helpers\ConcreteDependencyInjectionFunctionalTestHelper;
+use ConcreteUsers\Tests\Helpers\ConcreteUserHelper;
 
 final class ConcreteUserTest extends \PHPUnit_Framework_TestCase {
     
     private $dependencyInjectionFunctionTestHelper;
-    private $jsonFilePathElement;
-    private $entityJsonFilePathElement;
-    private $uuidJsonFilePathElement;
-    private $stringJsonFilePathElement;
-    private $stringSetJsonFilePathElement;
-    private $dateTimeFilePathElement;
-    private $booleanFilePathElement;
-    private $uuidElement;
-    private $usernameElement;
-    private $createdOnTimestampElement;
-    private $lastUpdatedOnTimestampElement;
-    private $uuidObjectsData;
-    private $stringObjectsData;
-    private $dateTimeObjectsData;
-    private $booleanObjectsData;
+    private $userHelper;
     public function setUp() {
         
         $this->dependencyInjectionFunctionTestHelper = new ConcreteDependencyInjectionFunctionalTestHelper(__DIR__.'/../../../../vendor');
-        
-        $this->jsonFilePathElement = realpath(__DIR__.'/../../../../dependencyinjection.json');
         $this->entityJsonFilePathElement = realpath(__DIR__.'/../../../../vendor/irestful/concreteentities/dependencyinjection.json');
-        $this->uuidJsonFilePathElement = realpath(__DIR__.'/../../../../vendor/irestful/concreteuuids/dependencyinjection.json');
-        $this->stringJsonFilePathElement = realpath(__DIR__.'/../../../../vendor/irestful/concretestrings/dependencyinjection.json');
-        $this->stringSetJsonFilePathElement = realpath(__DIR__.'/../../../../vendor/irestful/concretestringsets/dependencyinjection.json');
-        $this->dateTimeFilePathElement = realpath(__DIR__.'/../../../../vendor/irestful/concretedatetimes/dependencyinjection.json');
-        $this->booleanFilePathElement = realpath(__DIR__.'/../../../../vendor/irestful/concretebooleans/dependencyinjection.json');
         
-        $this->uuidElement = 'ca3497a0-b00b-11e3-a5e2-0800200c9a66';
-        $this->usernameElement = 'rogercyr';
-        $this->createdOnTimestampElement = time() - (24 * 60 * 60);
-        $this->lastUpdatedOnTimestampElement = time();
+        $jsonFilePathElement = realpath(__DIR__.'/../../../../dependencyinjection.json');
+        $roleJsonFilePathElement = realpath(__DIR__.'/../../../../vendor/irestful/concreteroles/dependencyinjection.json');
+        $permissionJsonFilePathElement = realpath(__DIR__.'/../../../../vendor/irestful/concretepermissions/dependencyinjection.json');
+        $entitySetJsonFilePathElement = realpath(__DIR__.'/../../../../vendor/irestful/concreteentitysets/dependencyinjection.json');
+        $uuidJsonFilePathElement = realpath(__DIR__.'/../../../../vendor/irestful/concreteuuids/dependencyinjection.json');
+        $stringJsonFilePathElement = realpath(__DIR__.'/../../../../vendor/irestful/concretestrings/dependencyinjection.json');
+        $dateTimeFilePathElement = realpath(__DIR__.'/../../../../vendor/irestful/concretedatetimes/dependencyinjection.json');
+        $booleanFilePathElement = realpath(__DIR__.'/../../../../vendor/irestful/concretebooleans/dependencyinjection.json');
         
-        $this->uuidObjectsData = $this->dependencyInjectionFunctionTestHelper->getMultipleFileDependencyInjectionApplication()->execute($this->uuidJsonFilePathElement);
-        $this->stringObjectsData = $this->dependencyInjectionFunctionTestHelper->getMultipleFileDependencyInjectionApplication()->execute($this->stringJsonFilePathElement);
-        $this->dateTimeObjectsData = $this->dependencyInjectionFunctionTestHelper->getMultipleFileDependencyInjectionApplication()->execute($this->dateTimeFilePathElement);
-        $this->booleanObjectsData = $this->dependencyInjectionFunctionTestHelper->getMultipleFileDependencyInjectionApplication()->execute($this->booleanFilePathElement);
+        $this->userHelper = new ConcreteUserHelper(
+            $this->dependencyInjectionFunctionTestHelper, 
+            $jsonFilePathElement, 
+            $roleJsonFilePathElement, 
+            $permissionJsonFilePathElement, 
+            $entitySetJsonFilePathElement, 
+            $uuidJsonFilePathElement, 
+            $stringJsonFilePathElement, 
+            $dateTimeFilePathElement, 
+            $booleanFilePathElement
+        );
     }
     
     public function tearDown() {
-        
-    }
-    
-    
-    private function buildUser() {
-        
-        $objectsData = $this->dependencyInjectionFunctionTestHelper->getMultipleFileDependencyInjectionApplication()->execute($this->jsonFilePathElement);
-        
-        $uuid = $this->uuidObjectsData['adapter']->convertElementToUuid($this->uuidElement);
-        $username = $this->stringObjectsData['adapter']->convertElementToPrimitive($this->usernameElement);
-        $createdOn = $this->dateTimeObjectsData['adapter']->convertTimestampElementToDateTime($this->createdOnTimestampElement);
-        $lastUpdatedOn = $this->dateTimeObjectsData['adapter']->convertTimestampElementToDateTime($this->lastUpdatedOnTimestampElement);
-        
-        return $objectsData['builderfactory']->create()
-                                                ->create()
-                                                ->withUuid($uuid)
-                                                ->withUsername($username)
-                                                ->createdOn($createdOn)
-                                                ->lastUpdatedOn($lastUpdatedOn)
-                                                ->now();
         
     }
     
@@ -72,7 +43,7 @@ final class ConcreteUserTest extends \PHPUnit_Framework_TestCase {
         $entitiesObjectData = $this->dependencyInjectionFunctionTestHelper->getMultipleFileDependencyInjectionApplication()->execute($this->entityJsonFilePathElement);
         
         //convert the object into hashmap:
-        $user = $this->buildUser();
+        $user = $this->userHelper->build();
         $hashMap = $entitiesObjectData['adapter']->convertEntityToHashMap($user);
         $this->assertTrue($hashMap instanceof \HashMaps\Domain\HashMaps\HashMap);
         

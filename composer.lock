@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "19c95697f7ae98f1950fa4a75593af1a",
+    "hash": "600b92ff94f1d86ece703a171a9b6fa4",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1486,12 +1486,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/irestful/ConcreteEntities.git",
-                "reference": "e60f0a97c3f1101942aa4e91a66b0bbeeb36d186"
+                "reference": "fd0a3d3e9237cbf2601d517eb1693e1c48063363"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/irestful/ConcreteEntities/zipball/e60f0a97c3f1101942aa4e91a66b0bbeeb36d186",
-                "reference": "e60f0a97c3f1101942aa4e91a66b0bbeeb36d186",
+                "url": "https://api.github.com/repos/irestful/ConcreteEntities/zipball/fd0a3d3e9237cbf2601d517eb1693e1c48063363",
+                "reference": "fd0a3d3e9237cbf2601d517eb1693e1c48063363",
                 "shasum": ""
             },
             "require": {
@@ -1545,7 +1545,103 @@
                 }
             ],
             "homepage": "https://github.com/irestful/ConcreteEntities",
-            "time": "2014-04-04 09:07:40"
+            "time": "2014-04-06 19:56:40"
+        },
+        {
+            "name": "irestful/concreteentitylists",
+            "version": "13.11.28",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/irestful/ConcreteEntityLists.git",
+                "reference": "471f94bed4bf980648c95e62dbe096ae4d7d4d29"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/irestful/ConcreteEntityLists/zipball/471f94bed4bf980648c95e62dbe096ae4d7d4d29",
+                "reference": "471f94bed4bf980648c95e62dbe096ae4d7d4d29",
+                "shasum": ""
+            },
+            "require": {
+                "irestful/concretebooleans": "13.11.28",
+                "irestful/concretedependencyinjectionobjectplaceholders": "13.11.28",
+                "irestful/concreteintegers": "13.11.28",
+                "irestful/concreteobjectloaders": "13.11.28",
+                "irestful/concretesimplelists": "13.11.28",
+                "irestful/concretestrings": "13.11.28",
+                "irestful/entities": "13.11.28",
+                "irestful/entitylists": "13.11.28",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "ConcreteEntityLists": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steve Rodrigue",
+                    "email": "steve@irestful.com"
+                }
+            ],
+            "homepage": "https://github.com/irestful/ConcreteEntityLists",
+            "time": "2014-04-03 12:48:48"
+        },
+        {
+            "name": "irestful/concreteentitysets",
+            "version": "13.11.28",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/irestful/ConcreteEntitySets.git",
+                "reference": "f03d3661dd4021895c7278b3b5965d405f893c01"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/irestful/ConcreteEntitySets/zipball/f03d3661dd4021895c7278b3b5965d405f893c01",
+                "reference": "f03d3661dd4021895c7278b3b5965d405f893c01",
+                "shasum": ""
+            },
+            "require": {
+                "irestful/concretedependencyinjectionobjectplaceholders": "13.11.28",
+                "irestful/concreteentities": "13.11.28",
+                "irestful/concreteentitylists": "13.11.28",
+                "irestful/concretefunctionaltesthelpers": "13.11.28",
+                "irestful/concretehashmapsets": "13.11.28",
+                "irestful/concreteobjectloaders": "13.11.28",
+                "irestful/concretesets": "13.11.28",
+                "irestful/entities": "13.11.28",
+                "irestful/entitylists": "13.11.28",
+                "irestful/entitysetss": "13.11.28",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "ConcreteEntitySets": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steve Rodrigue",
+                    "email": "steve@irestful.com"
+                }
+            ],
+            "homepage": "https://github.com/irestful/ConcreteEntitySets",
+            "time": "2014-04-03 12:49:57"
         },
         {
             "name": "irestful/concretefunctionaltesthelpers",
@@ -1587,6 +1683,56 @@
             ],
             "homepage": "https://github.com/irestful/ConcreteFunctionalTestHelpers",
             "time": "2014-03-24 21:43:24"
+        },
+        {
+            "name": "irestful/concretehashmaplists",
+            "version": "13.11.28",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/irestful/ConcreteHashMapLists.git",
+                "reference": "0285acfc6fdf52ffe9f89f549b8df3fe1b4b36e3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/irestful/ConcreteHashMapLists/zipball/0285acfc6fdf52ffe9f89f549b8df3fe1b4b36e3",
+                "reference": "0285acfc6fdf52ffe9f89f549b8df3fe1b4b36e3",
+                "shasum": ""
+            },
+            "require": {
+                "irestful/concretebooleans": "13.11.28",
+                "irestful/concretecollections": "13.11.28",
+                "irestful/concretedependencyinjectionobjectplaceholders": "13.11.28",
+                "irestful/concretefunctionaltesthelpers": "13.11.28",
+                "irestful/concretehashmaps": "13.11.28",
+                "irestful/concreteintegers": "13.11.28",
+                "irestful/concreteobjectloaders": "13.11.28",
+                "irestful/concretesimplelists": "13.11.28",
+                "irestful/concretestrings": "13.11.28",
+                "irestful/hashmaplists": "13.11.28",
+                "irestful/hashmaps": "13.11.28",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "ConcreteHashMapLists": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steve Rodrigue",
+                    "email": "steve@irestful.com"
+                }
+            ],
+            "homepage": "https://github.com/irestful/ConcreteHashMapLists",
+            "time": "2014-03-23 05:54:16"
         },
         {
             "name": "irestful/concretehashmaprepresentations",
@@ -1675,6 +1821,53 @@
             ],
             "homepage": "https://github.com/irestful/ConcreteHashMaps",
             "time": "2014-03-23 05:47:50"
+        },
+        {
+            "name": "irestful/concretehashmapsets",
+            "version": "13.11.28",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/irestful/ConcreteHashMapSets.git",
+                "reference": "e9418e4afaaeddeeee5dc37034fa52161fd4d0f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/irestful/ConcreteHashMapSets/zipball/e9418e4afaaeddeeee5dc37034fa52161fd4d0f9",
+                "reference": "e9418e4afaaeddeeee5dc37034fa52161fd4d0f9",
+                "shasum": ""
+            },
+            "require": {
+                "irestful/concretedependencyinjectionobjectplaceholders": "13.11.28",
+                "irestful/concretefunctionaltesthelpers": "13.11.28",
+                "irestful/concretehashmaplists": "13.11.28",
+                "irestful/concreteobjectloaders": "13.11.28",
+                "irestful/concretesets": "13.11.28",
+                "irestful/hashmaplists": "13.11.28",
+                "irestful/hashmaps": "13.11.28",
+                "irestful/hashmapsets": "13.11.28",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "ConcreteHashMapSets": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steve Rodrigue",
+                    "email": "steve@irestful.com"
+                }
+            ],
+            "homepage": "https://github.com/irestful/ConcreteHashMapSets",
+            "time": "2014-03-23 05:44:34"
         },
         {
             "name": "irestful/concreteintegers",
@@ -2120,6 +2313,55 @@
             "time": "2014-01-13 08:55:07"
         },
         {
+            "name": "irestful/concretepermissions",
+            "version": "13.11.28",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/irestful/ConcretePermissions.git",
+                "reference": "c89daeb3627ee229e99bc22ea17cec13616efc78"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/irestful/ConcretePermissions/zipball/c89daeb3627ee229e99bc22ea17cec13616efc78",
+                "reference": "c89daeb3627ee229e99bc22ea17cec13616efc78",
+                "shasum": ""
+            },
+            "require": {
+                "irestful/concretebooleans": "13.11.28",
+                "irestful/concreteclassannotationobjects": "13.11.28",
+                "irestful/concretedependencyinjectionobjectplaceholders": "13.11.28",
+                "irestful/concreteentities": "13.11.28",
+                "irestful/concretefunctionaltesthelpers": "13.11.28",
+                "irestful/concretemethodannotationobjects": "13.11.28",
+                "irestful/concreteobjectloaders": "13.11.28",
+                "irestful/concretestrings": "13.11.28",
+                "irestful/concreteuuids": "13.11.28",
+                "irestful/permissions": "13.11.28",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "ConcretePermissions": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steve Rodrigue",
+                    "email": "steve@irestful.com"
+                }
+            ],
+            "homepage": "https://github.com/irestful/ConcretePermissions",
+            "time": "2014-04-06 20:12:57"
+        },
+        {
             "name": "irestful/concreteprimitives",
             "version": "13.11.28",
             "source": {
@@ -2201,6 +2443,57 @@
             ],
             "homepage": "https://github.com/irestful/ConcretePropertyAnnotationObjects",
             "time": "2014-03-23 05:03:52"
+        },
+        {
+            "name": "irestful/concreteroles",
+            "version": "13.11.28",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/irestful/ConcreteRoles.git",
+                "reference": "ff76290fc5104be632e68267635c643b837130ac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/irestful/ConcreteRoles/zipball/ff76290fc5104be632e68267635c643b837130ac",
+                "reference": "ff76290fc5104be632e68267635c643b837130ac",
+                "shasum": ""
+            },
+            "require": {
+                "irestful/concretebooleans": "13.11.28",
+                "irestful/concreteclassannotationobjects": "13.11.28",
+                "irestful/concretedependencyinjectionobjectplaceholders": "13.11.28",
+                "irestful/concreteentities": "13.11.28",
+                "irestful/concreteentitysets": "13.11.28",
+                "irestful/concretefunctionaltesthelpers": "13.11.28",
+                "irestful/concretemethodannotationobjects": "13.11.28",
+                "irestful/concreteobjectloaders": "13.11.28",
+                "irestful/concretepermissions": "13.11.28",
+                "irestful/concretestrings": "13.11.28",
+                "irestful/concreteuuids": "13.11.28",
+                "irestful/roles": "13.11.28",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "ConcreteRoles": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steve Rodrigue",
+                    "email": "steve@irestful.com"
+                }
+            ],
+            "homepage": "https://github.com/irestful/ConcreteRoles",
+            "time": "2014-04-06 20:27:23"
         },
         {
             "name": "irestful/concretesets",
@@ -2907,6 +3200,47 @@
             "time": "2014-04-03 09:29:57"
         },
         {
+            "name": "irestful/entitylists",
+            "version": "13.11.28",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/irestful/EntityLists.git",
+                "reference": "4ad10c4d3919cfa373b2c341d8cea304418812fa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/irestful/EntityLists/zipball/4ad10c4d3919cfa373b2c341d8cea304418812fa",
+                "reference": "4ad10c4d3919cfa373b2c341d8cea304418812fa",
+                "shasum": ""
+            },
+            "require": {
+                "irestful/simplelists": "13.11.28",
+                "irestful/unittesthelpers": "13.11.28",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "EntityLists": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steve Rodrigue",
+                    "email": "steve@irestful.com"
+                }
+            ],
+            "homepage": "https://github.com/irestful/EntityLists",
+            "time": "2014-03-22 22:06:46"
+        },
+        {
             "name": "irestful/entitysetss",
             "version": "13.11.28",
             "source": {
@@ -2947,6 +3281,47 @@
             ],
             "homepage": "https://github.com/irestful/EntitySets",
             "time": "2014-03-26 18:46:11"
+        },
+        {
+            "name": "irestful/hashmaplists",
+            "version": "13.11.28",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/irestful/HashMapLists.git",
+                "reference": "ec606080f2d0f2dc8f89cf8c530781e581c1399f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/irestful/HashMapLists/zipball/ec606080f2d0f2dc8f89cf8c530781e581c1399f",
+                "reference": "ec606080f2d0f2dc8f89cf8c530781e581c1399f",
+                "shasum": ""
+            },
+            "require": {
+                "irestful/simplelists": "13.11.28",
+                "irestful/unittesthelpers": "13.11.28",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "HashMapLists": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steve Rodrigue",
+                    "email": "steve@irestful.com"
+                }
+            ],
+            "homepage": "https://github.com/irestful/HashMapLists",
+            "time": "2014-03-22 21:44:18"
         },
         {
             "name": "irestful/hashmaprepresentations",
@@ -3488,6 +3863,49 @@
             ],
             "homepage": "https://github.com/irestful/ObjectLoaders",
             "time": "2014-03-22 20:34:14"
+        },
+        {
+            "name": "irestful/permissions",
+            "version": "13.11.28",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/irestful/Permissions.git",
+                "reference": "da4c2cc30618a5e6a2ad8b8a23e223beac8e495f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/irestful/Permissions/zipball/da4c2cc30618a5e6a2ad8b8a23e223beac8e495f",
+                "reference": "da4c2cc30618a5e6a2ad8b8a23e223beac8e495f",
+                "shasum": ""
+            },
+            "require": {
+                "irestful/booleans": "13.11.28",
+                "irestful/entities": "13.11.28",
+                "irestful/strings": "13.11.28",
+                "irestful/unittesthelpers": "13.11.28",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Permissions": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steve Rodrigue",
+                    "email": "steve@irestful.com"
+                }
+            ],
+            "homepage": "https://github.com/irestful/Permissions",
+            "time": "2014-04-03 08:36:41"
         },
         {
             "name": "irestful/primitives",
@@ -4406,17 +4824,17 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.4.2",
+            "version": "v2.4.3",
             "target-dir": "Symfony/Component/Yaml",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "bb6ddaf8956139d1b8c360b4b713ed0138e876b3"
+                "reference": "77a41c2835ab7cfe8bf6d15e25d3af8f3eb3bacd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/bb6ddaf8956139d1b8c360b4b713ed0138e876b3",
-                "reference": "bb6ddaf8956139d1b8c360b4b713ed0138e876b3",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/77a41c2835ab7cfe8bf6d15e25d3af8f3eb3bacd",
+                "reference": "77a41c2835ab7cfe8bf6d15e25d3af8f3eb3bacd",
                 "shasum": ""
             },
             "require": {
@@ -4451,7 +4869,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2014-01-07 13:28:54"
+            "time": "2014-03-12 18:29:58"
         }
     ],
     "aliases": [
