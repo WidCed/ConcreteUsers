@@ -21,7 +21,11 @@
         "irestful/concreteobjectloaders": "13.11.28",
         "irestful/concretestrings": "13.11.28",
         "irestful/concreteuuids": "13.11.28",
-        "irestful/concreteroles": "13.11.28"
+        "irestful/concreteroles": "13.11.28",
+        "irestful/concreteobjectmetadatas": "13.11.28",
+        "irestful/concreteobjectmetadatarepresentations": "13.11.28",
+        "irestful/concretefilediskobjectmetadataservices": "13.11.28",
+        "irestful/concretefilediskobjectmetadatarepositories": "13.11.28"
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.*"

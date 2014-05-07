@@ -1,17 +1,13 @@
 <?php
 namespace ConcreteUsers\Tests\Tests\Functional;
 use ConcreteFunctionalTestHelpers\Tests\Helpers\ConcreteDependencyInjectionFunctionalTestHelper;
-use ConcreteUsers\Tests\Helpers\ConcreteUserHelper;
+use ConcreteUsers\Tests\Helpers\StaticUserHelper;
 
 final class ConcreteUserTest extends \PHPUnit_Framework_TestCase {
     
-    private $dependencyInjectionFunctionTestHelper;
-    private $userHelper;
+    private $objectsData;
     public function setUp() {
-        
-        $this->dependencyInjectionFunctionTestHelper = new ConcreteDependencyInjectionFunctionalTestHelper(__DIR__.'/../../../../vendor');
-        $this->entityJsonFilePathElement = realpath(__DIR__.'/../../../../vendor/irestful/concreteentities/dependencyinjection.json');
-        
+        $dependencyInjectionFunctionTestHelper = new ConcreteDependencyInjectionFunctionalTestHelper(__DIR__.'/../../../../vendor');
         $jsonFilePathElement = realpath(__DIR__.'/../../../../dependencyinjection.json');
         $roleJsonFilePathElement = realpath(__DIR__.'/../../../../vendor/irestful/concreteroles/dependencyinjection.json');
         $permissionJsonFilePathElement = realpath(__DIR__.'/../../../../vendor/irestful/concretepermissions/dependencyinjection.json');
@@ -21,8 +17,8 @@ final class ConcreteUserTest extends \PHPUnit_Framework_TestCase {
         $dateTimeFilePathElement = realpath(__DIR__.'/../../../../vendor/irestful/concretedatetimes/dependencyinjection.json');
         $booleanFilePathElement = realpath(__DIR__.'/../../../../vendor/irestful/concretebooleans/dependencyinjection.json');
         
-        $this->userHelper = new ConcreteUserHelper(
-            $this->dependencyInjectionFunctionTestHelper, 
+        StaticUserHelper::setUp(
+            $dependencyInjectionFunctionTestHelper,
             $jsonFilePathElement, 
             $roleJsonFilePathElement, 
             $permissionJsonFilePathElement, 
@@ -32,6 +28,9 @@ final class ConcreteUserTest extends \PHPUnit_Framework_TestCase {
             $dateTimeFilePathElement, 
             $booleanFilePathElement
         );
+        
+        $this->objectsData = $dependencyInjectionFunctionTestHelper->getMultipleFileDependencyInjectionApplication()->execute($jsonFilePathElement);
+        $this->objectsData['irestful.concreteobjectmetadatacompilerapplications.application']->compile();
     }
     
     public function tearDown() {
@@ -40,15 +39,14 @@ final class ConcreteUserTest extends \PHPUnit_Framework_TestCase {
     
     public function testConvertPermission_toHashMap_toPermission_Success() {
         
-        $entitiesObjectData = $this->dependencyInjectionFunctionTestHelper->getMultipleFileDependencyInjectionApplication()->execute($this->entityJsonFilePathElement);
+        $user = StaticUserHelper::getObject();
         
         //convert the object into hashmap:
-        $user = $this->userHelper->build();
-        $hashMap = $entitiesObjectData['adapter']->convertEntityToHashMap($user);
+        $hashMap = $this->objectsData['irestful.concreteentities.adapter']->convertEntityToHashMap($user);
         $this->assertTrue($hashMap instanceof \HashMaps\Domain\HashMaps\HashMap);
         
         //convert hashmap back to a User object:
-        $convertedUser = $entitiesObjectData['adapter']->convertHashMapToEntity($hashMap);
+        $convertedUser = $this->objectsData['irestful.concreteentities.adapter']->convertHashMapToEntity($hashMap);
         $this->assertEquals($user, $convertedUser);
         
     }
