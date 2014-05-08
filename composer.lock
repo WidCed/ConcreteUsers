@@ -1663,12 +1663,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/irestful/ConcreteEntities.git",
-                "reference": "0c929c59a8acada7748eb1d6ef592a3dfa777453"
+                "reference": "97081262f02cf97d2c0ec9a4fc340b403ac9d064"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/irestful/ConcreteEntities/zipball/0c929c59a8acada7748eb1d6ef592a3dfa777453",
-                "reference": "0c929c59a8acada7748eb1d6ef592a3dfa777453",
+                "url": "https://api.github.com/repos/irestful/ConcreteEntities/zipball/97081262f02cf97d2c0ec9a4fc340b403ac9d064",
+                "reference": "97081262f02cf97d2c0ec9a4fc340b403ac9d064",
                 "shasum": ""
             },
             "require": {
@@ -1732,7 +1732,7 @@
                 }
             ],
             "homepage": "https://github.com/irestful/ConcreteEntities",
-            "time": "2014-05-07 12:02:13"
+            "time": "2014-05-07 16:34:28"
         },
         {
             "name": "irestful/concreteentitylists",
@@ -3051,12 +3051,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/irestful/ConcretePDOHashMapRepositories.git",
-                "reference": "1749961c278dac4938585e1580d57cc3be405935"
+                "reference": "3c5f76c7122db260aa486ad62ec04f01d5cafdfb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/irestful/ConcretePDOHashMapRepositories/zipball/1749961c278dac4938585e1580d57cc3be405935",
-                "reference": "1749961c278dac4938585e1580d57cc3be405935",
+                "url": "https://api.github.com/repos/irestful/ConcretePDOHashMapRepositories/zipball/3c5f76c7122db260aa486ad62ec04f01d5cafdfb",
+                "reference": "3c5f76c7122db260aa486ad62ec04f01d5cafdfb",
                 "shasum": ""
             },
             "require": {
@@ -3101,7 +3101,7 @@
                 }
             ],
             "homepage": "https://github.com/irestful/ConcretePDOHashMapRepositories",
-            "time": "2014-05-02 13:55:58"
+            "time": "2014-05-07 23:05:07"
         },
         {
             "name": "irestful/concretepermissions",
